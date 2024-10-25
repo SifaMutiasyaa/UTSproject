@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -13,26 +14,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Get references to the EditText and Button elements
         val etUsername = findViewById<EditText>(R.id.etUsername)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
-        // Set an onClickListener for the login button
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
 
-            // Check if credentials are correct
-            if (username == "admin" && password == "admin") {
-                // If correct, navigate to ListFoodActivity
+            // Retrieve stored username and password from SharedPreferences
+            val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+            val storedUsername = sharedPreferences.getString("username", null)
+            val storedPassword = sharedPreferences.getString("password", null)
+
+            // Check if the credentials match
+            if (username == storedUsername && password == storedPassword) {
                 val intent = Intent(this, ListFoodActivity::class.java)
                 startActivity(intent)
-                finish() // Optional: close MainActivity so it can't be navigated back to
+                finish() // Close MainActivity
             } else {
-                // Show a toast if credentials are incorrect
                 Toast.makeText(this, "Username or password is incorrect", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        val tvRegister = findViewById<TextView>(R.id.tvRegister)
+        tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }
