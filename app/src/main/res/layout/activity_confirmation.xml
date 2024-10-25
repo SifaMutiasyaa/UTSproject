@@ -22,6 +22,7 @@
 
     <!-- Confirmation Nama Makanan -->
     <TextView
+        android:id="@+id/tvFoodName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Food Name: Batagor"
@@ -30,6 +31,7 @@
 
     <!-- Confirmation Jumlah Porsi -->
     <TextView
+        android:id="@+id/tvServings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number of Servings: 2 pax"
@@ -38,6 +40,7 @@
 
     <!-- Confirmation Nama pengorder -->
     <TextView
+        android:id="@+id/tvOrderingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ordering Name: Usep"
@@ -46,14 +49,16 @@
 
     <!-- Input Catatan Tambahan -->
     <TextView
+        android:id="@+id/tvAdditionalNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Additional Notes: Tidak Pedas"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Input Catatan Tambahan -->
+    <!-- Pesan Konfirmasi -->
     <TextView
+        android:id="@+id/tvConfirmationMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Thanks for your order and please wait for delivering by nearest courier"
