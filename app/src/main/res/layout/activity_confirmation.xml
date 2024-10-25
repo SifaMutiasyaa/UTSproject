@@ -24,7 +24,6 @@
         android:id="@+id/tvFoodName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/food_name_batagor"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -33,7 +32,6 @@
         android:id="@+id/tvServings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/number_of_servings_2_pax"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -42,7 +40,6 @@
         android:id="@+id/tvOrderingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ordering_name_usep"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -51,7 +48,6 @@
         android:id="@+id/tvAdditionalNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/additional_notes_tidak_pedas"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"/>
 
