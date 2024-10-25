@@ -5,4 +5,11 @@
     <string name="login">Login\n</string>
     <string name="register">Register Here</string>
     <string name="food_list_title">Food and Beverages</string>
+    <string name="order_food">Order Food</string>
+    <string name="food_name_batagor">Food Name: Batagor</string>
+    <string name="number_of_servings_2_pax">Number of Servings: 2 pax</string>
+    <string name="ordering_name_usep">Ordering Name: Usep</string>
+    <string name="additional_notes_tidak_pedas">Additional Notes: Tidak Pedas</string>
+    <string name="thanks_for_your_order_and_please_wait_for_delivering_by_nearest_courier">Thanks for your order and please wait for delivering by nearest courier</string>
+    <string name="back_to_menu">Back to Menu</string>
 </resources>

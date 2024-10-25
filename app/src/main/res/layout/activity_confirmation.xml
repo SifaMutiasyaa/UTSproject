@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -14,7 +13,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order Food"
+        android:text="@string/order_food"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -25,7 +24,7 @@
         android:id="@+id/tvFoodName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food Name: Batagor"
+        android:text="@string/food_name_batagor"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -34,7 +33,7 @@
         android:id="@+id/tvServings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of Servings: 2 pax"
+        android:text="@string/number_of_servings_2_pax"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -43,7 +42,7 @@
         android:id="@+id/tvOrderingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ordering Name: Usep"
+        android:text="@string/ordering_name_usep"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -52,7 +51,7 @@
         android:id="@+id/tvAdditionalNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Additional Notes: Tidak Pedas"
+        android:text="@string/additional_notes_tidak_pedas"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"/>
 
@@ -61,7 +60,7 @@
         android:id="@+id/tvConfirmationMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thanks for your order and please wait for delivering by nearest courier"
+        android:text="@string/thanks_for_your_order_and_please_wait_for_delivering_by_nearest_courier"
         android:textStyle="bold"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
@@ -70,6 +69,6 @@
         android:id="@+id/backtoMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to Menu" />
+        android:text="@string/back_to_menu" />
 
 </LinearLayout>

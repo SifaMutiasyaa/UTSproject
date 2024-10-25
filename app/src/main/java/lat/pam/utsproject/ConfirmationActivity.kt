@@ -1,5 +1,6 @@
 package lat.pam.utsproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -11,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class ConfirmationActivity : AppCompatActivity() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
