@@ -1,5 +1,6 @@
 package lat.pam.utsproject
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,21 +22,28 @@ class ListFoodActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Prepare food data
         foodList = listOf(
-            Food("Batagor", "Batagor asli enak dari Bandung", R.drawable.batagor),
-            Food("Black Salad", "Salad segar yang dibuat secara langsung", R.drawable.black_salad),
-            Food("Cappuccino", "Kopi cappuccino asli yang dibuat dari Kopi Arabica", R.drawable.cappuchino),
-            Food("Cheesecake", "Cheesecake manis semanis kamu", R.drawable.cheesecake),
-            Food("Cireng", "Cireng enak banget asli garut", R.drawable.cireng),
-            Food("Donut", "Donut yang ngga kalah enak dari donsu", R.drawable.donut),
-            Food("Kopi hitam", "Kopi hitam yang bikin kamu kuat begadang", R.drawable.kopi_hitam),
-            Food("Mie Goreng", "Mie goreng yang beda dari yang lain", R.drawable.mie_goreng),
-            Food("Nasi Goreng", "Nasi goreng asli enak dari Padang", R.drawable.nasigoreng),
-            Food("Sparkling_tea", "Minuman segar yang bikin kamu melek", R.drawable.sparkling_tea)
+            Food(1, "Batagor", "Authentic tasty Batagor from Bandung", R.drawable.batagor, 15.0),
+            Food(2, "Black Salad", "Fresh salad made to order", R.drawable.black_salad, 12.0),
+            Food(3, "Cappuccino", "Original cappuccino made from Arabica coffee", R.drawable.cappuchino, 20.0),
+            Food(4, "Cheesecake", "Sweet cheesecake as sweet as you", R.drawable.cheesecake, 25.0),
+            Food(5, "Cireng", "Delicious crispy fried tapioca from Garut", R.drawable.cireng, 10.0),
+            Food(6, "Donut", "Delicious donuts that rival famous brands", R.drawable.donut, 15.0),
+            Food(7, "Black Coffee", "Strong black coffee to keep you awake", R.drawable.kopi_hitam, 10.0),
+            Food(8, "Fried Noodles", "Unique fried noodles unlike any other", R.drawable.mie_goreng, 12.0),
+            Food(9, "Fried Rice", "Authentic and tasty fried rice from Padang", R.drawable.nasigoreng, 20.0),
+            Food(10, "Sparkling Tea", "Refreshing drink to keep you alert", R.drawable.sparkling_tea, 15.0)
         )
 
-        adapter = FoodAdapter(foodList, this)
+
+
+        adapter = FoodAdapter { food ->
+            val intent = Intent(this, OrderActivity::class.java).apply {
+                putExtra("FOOD_NAME", food.name)
+            }
+            startActivity(intent)
+        }
+        adapter.setFoods(foodList)
         recyclerView.adapter = adapter
 
         // Set up edge-to-edge display

@@ -16,11 +16,21 @@ class RegisterActivity : AppCompatActivity() {
 
         val usernameInput = findViewById<EditText>(R.id.etUsername)
         val passwordInput = findViewById<EditText>(R.id.etPassword)
+        val emailInput = findViewById<EditText>(R.id.etEmail) // Assuming you have an email field
+        val phoneNumberInput = findViewById<EditText>(R.id.etPhoneNumber) // Assuming you have a phone number field
         val registerButton = findViewById<Button>(R.id.btnRegister)
 
         registerButton.setOnClickListener {
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
+            val email = emailInput.text.toString()
+            val phoneNumber = phoneNumberInput.text.toString()
+
+            // Check if all fields are filled
+            if (username.isEmpty() || password.isEmpty() || email.isEmpty() || phoneNumber.isEmpty()) {
+                Toast.makeText(this, "Please, Fill in all fields!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Save the username and password in SharedPreferences
             val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)

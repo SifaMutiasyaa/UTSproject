@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -18,7 +18,6 @@ class OrderActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_order)
 
         // Ambil data nama makanan dari intent
@@ -37,6 +36,12 @@ class OrderActivity : AppCompatActivity() {
             val servings = servingsEditText.text.toString()
             val orderingName = nameEditText.text.toString()
             val additionalNotes = notesEditText.text.toString()
+
+            // Check if all fields are filled
+            if (servings.isEmpty() || orderingName.isEmpty()) {
+                Toast.makeText(this, "Please, fill in all fields!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Kirim data ke ConfirmationActivity
             val intent = Intent(this, ConfirmationActivity::class.java).apply {
